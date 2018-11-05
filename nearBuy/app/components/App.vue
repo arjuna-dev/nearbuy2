@@ -12,7 +12,7 @@
             </v-template>
             </ListView>
 
-            <TabView :selectedIndex="selectedIndex">
+            <TabView :selectedIndex="selectedIndex" v-model="selectedIndex" @selectedIndexChange="onTabTap">
                 <TabViewItem title="Tab 1" iconSource="res://icon">
                     <Label text="Content for Tab 1" />
                 </TabViewItem>
@@ -60,6 +60,9 @@ firebase
 console.log("i am app");
 export default {
   methods: {
+    onTabTap(){
+      console.log(this.$data.selectedIndex.value);
+    },
     onButtonTap() {
       //console.log(this.$data.textFieldValue);
       console.log('you just did onSubmit');
@@ -119,6 +122,7 @@ export default {
   },
   data() {
     return {
+      selectedIndex:0,
       searchQuery: "",
       textFieldValue: "",
       searchedProds: []

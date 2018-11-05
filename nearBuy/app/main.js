@@ -15,4 +15,4 @@ Vue.registerElement("Mapbox", () => require("nativescript-mapbox").MapboxView)
 
 new Vue({
   render: h => h('frame', [h(App)])
-}).$start()
+}).$start() 
